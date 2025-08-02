@@ -1,0 +1,111 @@
+
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatbot Educativo - Preparatoria</title>
+    <link rel="stylesheet" href="archivo de estilos.css">
+    <link href="texto_de_prueba_2.html">
+<body>
+    
+    <div id="main-menu">
+        <h1>ChatBot Educativo - Preparatoria</h1>
+        <h1>¡Pregunta sobre tareas, fechas importantes y más!</h1>
+        <li><button onclick="showSection('festivos')">Dudas sobre Días Festivos</button></li>
+        <li><button onclick="showSection('quizz')">Hacer Quizz de Prueba</button></li>
+        <li><button onclick="showSection('documentos')">Información para Tramitar Documentos</button></li>
+        <li><button onclick="showSection('materias')">Dudas sobre Materias Básicas</button></li>
+        <li><button onclick="showSection('chatbot')">Chatear con el ChatBot</button></li>
+    </div>
+ <!-- Barra superior con botón de cerrar sesión -->
+    <div id="top-bar">
+        <button onclick="cerrarSesion()">Cerrar sesión</button>
+    </div>
+    
+    <div id="festivos" class="section">
+        <h2>Días Festivos</h2>
+        <div id="festivos-list"></div>
+        <button onclick="displayFestivos()">Mostrar Días Festivos</button>
+        <button onclick="goBack()">Volver</button>
+    </div>
+
+    <div id="quizz" class="section">
+        <h2>Quizz de Prueba</h2>
+        <p>Selecciona una materia:</p>
+        <div>
+            <li></li><button onclick="startQuiz('Matemáticas Aplicadas')">Matemáticas Aplicadas</button></li>
+            <li><button onclick="startQuiz('Pensamiento Matemático I')">Pensamiento Matemático I</button></li>
+            <li><button onclick="startQuiz('Pensamiento Matemático II')">Pensamiento Matemático II</button></li>
+            <li>><button onclick="startQuiz('Pensamiento Matemático III')">Pensamiento Matemático III</button></li>
+            <li><button onclick="startQuiz('Física')">Física</button></li>
+            <li><button onclick="startQuiz('Química')">Química</button></li>
+            <li><button onclick="startQuiz('Inglés')">Inglés</button></li>
+            <li><button onclick="startQuiz('Cultura Digital')">Cultura Digital</button></li>
+            <li><button onclick="startQuiz('Ciencias Sociales')">Ciencias Sociales</button></li>
+            <li><button onclick="startQuiz('La Materia y sus Interacciones')">La Materia y sus Interacciones</button></li>
+            <li><button onclick="startQuiz('Ciencias Sociales II')">Ciencias Sociales II</button></li>
+            <li><button onclick="startQuiz('Cultura Digital II')">Cultura Digital II</button></li>
+            <li><button onclick="startQuiz('Inglés II')">Inglés II</button></li>
+            <li><button onclick="startQuiz('Inglés III')">Inglés III</button></li>
+            <li><button onclick="startQuiz('Humanidades')">Humanidades</button></li>
+            <li><button onclick="startQuiz('Humanidades II')">Humanidades II</button></li>
+            <li><button onclick="startQuiz('Lengua y Comunicación')">Lengua y Comunicación</button></li>
+            <li><button onclick="startQuiz('Lengua y Comunicación II')">Lengua y Comunicación II</button></li>
+            <li><button onclick="startQuiz('Lengua y Comunicación III')">Lengua y Comunicación III</button></li>
+            <li><button onclick="startQuiz('Inglés IV')">Inglés IV</button></li>
+            <li><button onclick="startQuiz('Inglés V')">Inglés V</button></li>
+
+        </div>
+        <button onclick="goBack()">Volver</button>
+    </div>
+
+    <div id="documentos" class="section">
+        <h2>Información para Tramitar Documentos</h2>
+        <ul>
+            <li><strong>Constancias:</strong> Visita la oficina administrativa con tu identificación escolar oficial.</li>
+            <li><strong>Historial académico:</strong> Solicítalo en el área de servicios escolares, con Jonathan o Silvestre.</li>
+            <li><strong>Boletas:</strong> Descarga tu boleta directamente desde el portal de alumnos.</li>
+            <li><strong>Otros trámites:</strong> Consulta el reglamento escolar para requisitos específicos. o consultalo con Jonathan o Silvestre. </li>
+        </ul>
+        <button onclick="goBack()">Volver</button>
+    </div>
+
+        <div id="materias" class="section">
+            <h2>Dudas sobre Materias Básicas</h2>
+            <label for="semestre-select">Selecciona tu semestre:</label>
+            <select id="semestre-select" onchange="displayMaterias()">
+                <option value="1">1er Semestre</option>
+                <option value="2">2do Semestre</option>
+                <option value="3">3er Semestre</option>
+                <option value="4">4to Semestre</option>
+                <option value="5">5to Semestre</option>
+                <option value="6">6to Semestre</option>
+            </select>
+            <label for="grupo-select">Selecciona tu grupo:</label>
+            <select id="grupo-select" onchange="displayMaterias()">
+                <option value="a">Grupo A</option>
+                <option value="b">Grupo B</option>
+                <option value="c">Grupo C</option>
+                <option value="d">Grupo D</option>
+                <option value="e">Grupo E</option>
+            </select>
+            <div id="materias-info"></div>
+            <button onclick="goBack()">Volver</button>
+        </div>
+        
+
+    <div id="chatbot" class="section">
+        <h2>ChatBot</h2>
+        <div id="chat-window"></div>
+        <input type="text" id="chat-input" placeholder="Escribe tu pregunta...">
+        <button onclick="handleChat()">Enviar</button>
+        <button onclick="goBack()">Volver</button>
+    </div>
+
+    <script src="javascript.js"></script>
+
+</body>
+</html>
+
